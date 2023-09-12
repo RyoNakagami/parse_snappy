@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "parse-snappy"
+version = "0.1.0"
+description = "parse snappy file and print it in stdout"
+authors = ["RyoNak-billy <nakagamiryo0901@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.1.0"
+pyarrow = "^13.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

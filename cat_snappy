@@ -1,0 +1,11 @@
+#!bin/bash
+
+set -e
+
+## set variable
+TARGET_DIR=$(cd $(dirname $0); pwd)
+exec_file=$TARGET_DIR/parse_snappy/parse_snappy.py
+run_python=$TARGET_DIR/.venv/bin/python
+
+## main
+$run_python $exec_file $1
