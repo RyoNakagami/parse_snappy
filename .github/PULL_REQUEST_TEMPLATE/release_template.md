@@ -7,7 +7,6 @@
 
 ## 1. Version
 
-- Beta version: `{{BETA_VERSION}}`
 - Main release version: `{{RELEASE_VERSION}}`
 - Git tag: `v{{RELEASE_VERSION}}`
 
