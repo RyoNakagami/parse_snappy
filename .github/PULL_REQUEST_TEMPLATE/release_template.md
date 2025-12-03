@@ -1,4 +1,4 @@
-# Release Notes: {{RELEASE_VERSION}}
+# Test Release Notes: {{RELEASE_VERSION}}
 
 > このリリースは **beta-release-{{BETA_VERSION}}** での最終調整を反映した main リリースです。  
 > 新機能追加は含まず、バージョン番号更新・リリースノート・微修正・テスト済み修正が中心です。
