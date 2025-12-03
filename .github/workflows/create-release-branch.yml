@@ -1,0 +1,39 @@
+name: Create Release Branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version (e.g., 1.1.x)"
+        required: true
+        type: string
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 全ブランチを取得する必要がある
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Switch to develop branch
+        run: |
+          git switch develop
+
+      - name: Create release branch
+        run: |
+          RELEASE_BRANCH="release/${{ inputs.version }}"
+          git switch -c "$RELEASE_BRANCH"
+
+      - name: Push new branch to remote
+        run: |
+          RELEASE_BRANCH="release/${{ inputs.version }}"
+          git push origin "$RELEASE_BRANCH"
+
