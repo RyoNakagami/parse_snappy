@@ -9,8 +9,7 @@ on:
         type: string
 
 permissions:
-  contents: write   # ← これが必要！
-
+  contents: write
 
 jobs:
   create-branch:
@@ -18,9 +17,9 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
-          fetch-depth: 0   # 全ブランチを取得する必要がある
+          fetch-depth: 0 # full history to create branches
 
       - name: Configure Git identity
         run: |
